@@ -16,6 +16,7 @@
     />
   </head>
   <body>
+    <!-- <div class="loading" style="width:100px;height:100vh; background:#fff;"></div> -->
     <!-- Start Header -->
     <header>
         <div class="container">
@@ -25,6 +26,7 @@
         </div>
         <nav>
             <i class="fas fa-bars"></i>
+            <i style="display: none;" class="fas fa-times"></i>
           <ul>
             <li><a href="#">Collections</a></li>
             <li><a href="#">Men</a></li>
@@ -36,14 +38,14 @@
       </div>
       <div class="right-side">
         <div class="chart-box">
-          <img src="images/icon-cart.svg" alt="cahrt" class="chart" />
+          <img src="images/icon-cart.svg" alt="chart" class="chart" />
           <div class="box">
             <h2>Cart</h2>
             <div class="content">
               <img src="images/image-product-1-thumbnail.jpg" alt="" />
               <p>
                 Fall Limited Edition Sneakers 
-                <br /> $125.00 x 3 <span>$375.00</span>
+                <br /> <span id="total">No Item Add</span> <span id="result"></span>
               </p>
               <img class="del" src="images/icon-delete.svg" alt="del" />
             </div>
@@ -55,23 +57,28 @@
     </header>
 </div>
     <!-- End Header -->
-    <!-- Start contetn -->
+    <!-- Start content -->
     <section>
         <div class="container">
             <div class="product">
-                <img class="preview" src="images/image-product-1.jpg" alt="">
+              <span id="next"></span>
+              <span id="privous"></span>
+                <img id="pro1" class="fade preview show" src="images/image-product-1.jpg" alt="">
+                <img id="pro2" class="fade preview " src="images/image-product-2.jpg" alt="">
+                <img id="pro3" class="fade preview " src="images/image-product-3.jpg" alt="">
+                <img id="pro4" class="fade preview" src="images/image-product-4.jpg" alt="">
                 <div class="thumbnail">
-                    <div class="box">
-                        <img src="images/image-product-1-thumbnail.jpg" alt="">
+                    <div class="box selected">
+                        <img src="images/image-product-1-thumbnail.jpg" alt="" data-num="pro1">
                     </div>
                     <div class="box">
-                        <img src="images/image-product-2-thumbnail.jpg" alt="">
+                        <img src="images/image-product-2-thumbnail.jpg" alt=""data-num="pro2">
                     </div>
                     <div class="box">
-                        <img src="images/image-product-3-thumbnail.jpg" alt="">
+                        <img src="images/image-product-3-thumbnail.jpg" alt="" data-num="pro3">
                     </div>
                     <div class="box">
-                        <img src="images/image-product-4-thumbnail.jpg" alt="">
+                        <img src="images/image-product-4-thumbnail.jpg" alt="" data-num="pro4">
                     </div>
                 </div>
             </div>
@@ -84,15 +91,16 @@
                 <span class="offer">$250.00</span>
                 <div class="quantity">
                     <div class="button">
-                        <img src="images/icon-minus.svg" alt="">
+                        <img id="minus" src="images/icon-minus.svg" alt="">
                         <span class="num">0</span>
-                        <img src="images/icon-plus.svg" alt="">
+                        <img id="plus" src="images/icon-plus.svg" alt="">
                     </div>
                     <button class="add"><img src="images/icon-cart.svg" alt=""> Add to cart</button>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End contetn -->
+    <!-- End content -->
+    <script src="js/main.js"></script>
   </body>
 </html>
