@@ -435,7 +435,7 @@ header .container .left-side nav:hover {
     align-items: center;
     gap: 50px;
     background-color: #fff;
-    /* animation: hide 2s forwards; */
+    animation: hide 2s forwards;
     animation-delay: 4s;
 }
 #load {
