@@ -255,7 +255,7 @@ section .container .product #next {
 }
 section .container .product #next,
 section .container .product #privous {
-    z-index: 99;
+    z-index: 3;
     display: none;
     width: 35px;
     height: 35px;
@@ -300,6 +300,7 @@ section .container .product .thumbnail .box {
     width: calc((100% - 30px) / 4);
     border-radius: 10px;
     position: relative;
+    z-index: 5;
     overflow: hidden;
 }
 section .container .product .thumbnail .box img {
@@ -426,3 +427,74 @@ header .container .left-side nav:hover {
   from {opacity: .4} 
   to {opacity: 1}
 }
+/* Start loading */
+#loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background-color: #fff;
+    animation: hide 2s forwards;
+    animation-delay: 4s;
+}
+#load {
+    position: relative;
+}
+#load::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    left: 0%;
+    animation-name: loading;
+    animation-timing-function: linear;
+    animation-direction: alternate;
+    animation-duration: 1.5s;
+    animation-iteration-count: 4;
+}
+#load #text{
+    font-size: 65px;
+    font-weight: bold;
+    letter-spacing: 8px;
+    color: white;
+    mix-blend-mode: difference;
+}
+html {
+    background: #fff;
+    }
+@keyframes loading {
+    100% {
+        left: 50%;
+    }
+}
+@keyframes hide {
+    100% {
+        opacity: 0;
+        z-index: -1;
+    }
+}
+@media (max-width:767px) {
+    #load #text {
+        font-size: 40px;
+    }
+    #name {
+        font-size: 80px !important;
+    }
+}
+#name {
+    font-size: 130px;
+    letter-spacing: -1px;
+    transition: 1s;
+    position: absolute;
+    top: -100px;
+    animation: down 2s forwards;
+    color: #212121;
+}
+@keyframes down {
+    to {
+        top: 120px;
+    }
+}
+/* End loading */
